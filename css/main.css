@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+html, body {
+    font-family: "Alef Hebrew";
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ng-view {
+  height: 100%;
+}
+
+div.tableContainer {
+    margin: 0 5%;
+}
+
+.missionCard {
+    height: 20%;
+    background-color: #039be5;
+    text-align: center;
+}
+
+.missionCardForm {
+    max-width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    max-height: 100%;
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#ngViewModal {
+    height: 100%;
+}
+
+.add-icon {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.addMissinIcon {
+    cursor: pointer;
+    left: 0;
+    position: fixed;
+    bottom: 0;  
+}
+
+.contentCard {
+    width: 400px;
+}
+
+.dropdown-content {
+    direction: initial;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+  .wrap {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .button {
+    display: inline-block;
+    margin: 0.3em;
+    padding: 1em 2em;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border: none; 
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .button:hover {
+    box-shadow: 1px 6px 15px rgba(0,0,0,0.5);
+  }
+  
+  .green {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .red {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .blue {
+    background-color: #03A9F4;
+    color: white;
+  }
+  
+  .ripple {
+    position: absolute;
+    background: rgba(0,0,0,.25);
+    border-radius: 100%;
+    transform: scale(0.2);
+    opacity:0;
+    pointer-events: none;
+    -webkit-animation: ripple .75s ease-out;
+    -moz-animation: ripple .75s ease-out;
+    animation: ripple .75s ease-out;
+  }
+  
+  @-webkit-keyframes ripple {
+    from {
+      opacity:1;
+    }
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @-moz-keyframes ripple {
+    from {
+      opacity:1;
+    }
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes ripple {
+    from {
+      opacity:1;
+    }
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .logo{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    height: 100%;
+   
+
+  }
+  
+  
+  

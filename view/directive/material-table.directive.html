@@ -1,0 +1,37 @@
+<div ng-class="{tableContainer: addPadding}">
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="right-align" ng-repeat="col in columnNames">{{ col }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="curr in presentData">
+                <td class="right-align" ng-repeat="(key, value) in curr" ng-if="skipProps.indexOf(key) == -1">
+                    <span editable-text="value" e-name="{{key}}" e-form="rowform" onbeforesave="checkName($data, curr.id_drone)" e-required>
+                        {{ value | join:", " | latlng:7 }}
+                    </span>
+                </td>
+                <td style="white-space: nowrap">
+                    <!-- form -->
+                    <form editable-form name="rowform" onbeforesave="update($data, curr.id_drone)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == curr">
+                        <button type="submit" ng-disabled="rowform.$waiting">
+                            <i class="small material-icons">save</i>
+                        </button>
+                        <a type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()">
+                            <i class="small material-icons">cancel</i>
+                        </a>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                            
+                        <a ng-click="rowform.$show()">
+                            <i class="small material-icons">edit</i>
+                        </a>
+                        <a ng-click="delete($index, curr.id_drone, curr)">
+                            <i class="small material-icons">delete</i>
+                        </a>
+                    </div>  
+            </tr>
+        </tbody>
+    </table>
+</div>

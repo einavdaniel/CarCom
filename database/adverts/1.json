@@ -1,0 +1,14 @@
+{
+    "advert": {
+      "ID": 1,
+      "car": {
+        "id": 12,
+        "vendor": "mazda",
+        "model": "Lantis",
+        "insurance": "some long text",
+        "description": "most amazing car ever"
+      },
+      "publisherID": 204157184,
+      "price": 5.5
+    }
+  }
