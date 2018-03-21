@@ -12,7 +12,7 @@
         "dates": "6.3.18-9.3.18",
         "publisherID": 204157184,
         "price": 35,
-        "community": "מצפן",
+        "community": 1,
         "isAvailable": true
     },
     {
@@ -28,7 +28,23 @@
         "dates": "6.3.18-9.3.18",
         "publisherID": 315964494,
         "price": 60,
-        "community": "מצפן",
+        "community": 1,
         "isAvailable": false
+    },
+    {
+        "ID": 3,
+        "car": {
+            "id": 9595884,
+            "vendor": "Ford",
+            "model": "Focus",
+            "year": "2006",
+            "insurance": "Full, Age 21+",
+            "description": "Clean and lovely car. 2nd hand, original engine"
+        },
+        "dates":"6.3.18-9.3.18",
+        "publisherID": 203771910,
+        "price": 60,
+        "community": 1,
+        "isAvailable": true
     }
 ]
