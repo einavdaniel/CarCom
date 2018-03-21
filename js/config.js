@@ -15,6 +15,9 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "/view/RentingList/rentingList.html",
             controller: "rentingListCtrl"
         })
+        .when("/aboutUs",{
+            templateUrl: "/view/About/about.html",
+        })
         .otherwise({
             redirectTo: "/"
         });
