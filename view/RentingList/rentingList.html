@@ -23,7 +23,11 @@
     <div class="row">
         <div class="col-sm-4" ng-repeat="advert in adsList">
             <div class="card mb-3">
-                <h3 class="card-header">{{advert.publisher.firstName}} {{advert.publisher.lastName}}</h3>
+                <h3 class="card-header">
+                    {{advert.publisher.firstName}} {{advert.publisher.lastName}}
+                    <br>
+                    <img style="height: 50px; width: 20% ;  right: 0" src="./img/personal/{{advert.publisherID}}.jpg">
+                </h3>
                 <div class="card-body">
                     <h5 class="card-title">{{advert.car.vendor}} {{advert.car.model}} {{advert.car.year}}</h5>
                     <h6 class="card-subtitle text-muted">{{advert.dates}}</h6>
