@@ -3,7 +3,7 @@
         "ID": 1,
         "car": {
             "id": 2063050,
-            "vendor": "Hunda",
+            "vendor": "Honda",
             "model": "Civic",
             "year": "2002",
             "insurance": "Full, Age 24+",
@@ -28,7 +28,7 @@
         "dates": "6.3.18-9.3.18",
         "publisherID": 315964494,
         "price": 60,
-        "community": 1,
+        "community": [1],
         "isAvailable": false
     },
     {
@@ -44,7 +44,23 @@
         "dates":"6.3.18-9.3.18",
         "publisherID": 203771910,
         "price": 60,
-        "community": 1,
+        "community": [1],
+        "isAvailable": true
+    },
+    {
+        "ID": 4,
+        "car": {
+            "id": 91451161,
+            "vendor": "Mazda",
+            "model": "cx5",
+            "year": "2014",
+            "insurance": "Full, Age 30+",
+            "description": "Clean and lovely car. 2nd hand, original engine"
+        },
+        "dates":"1.4.18, 8.4.18, 15.4.18, 22.4.18",
+        "publisherID": 302595461,
+        "price": 60,
+        "community": [1],
         "isAvailable": true
     }
 ]
