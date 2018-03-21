@@ -1,14 +1,15 @@
 {
-    "advert": {
-      "ID": 1,
-      "car": {
-        "id": 12,
-        "vendor": "mazda",
-        "model": "Lantis",
-        "insurance": "some long text",
-        "description": "most amazing car ever"
-      },
-      "publisherID": 204157184,
-      "price": 5.5
-    }
+  "advert": {
+    "ID": 1,
+    "car": {
+      "id": 2063050,
+      "vendor": "Hunda",
+      "model": "Civic",
+      "insurance": "some long text",
+      "description": "most amazing car ever"
+    },
+    "dates": "6.3.18-9.3.18",
+    "publisherID": 204157184,
+    "price": 5.5
   }
+}

@@ -1,9 +1,7 @@
 {
-    "publisher": {
-      "id": 204157184,
-      "first_name": "einav",
-      "last_name": "daniel",
-      "phone_number": "0547607266",
-      "email": "einav.dfic@gmail.com"
-    }
-  }
+  "id": 204157184,
+  "firstName": "einav",
+  "lastName": "daniel",
+  "phoneNumber": "0547607266",
+  "email": "einav.dfic@gmail.com"
+}

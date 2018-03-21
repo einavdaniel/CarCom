@@ -1,4 +1,9 @@
-var app = angular.module('CarComApp', ['xeditable', 'ngRoute', 'ui.materialize']);
+var app = angular.module('CarComApp', [
+    // 'xeditable', 
+    'ngRoute', 
+    // 'ui.materialize',
+    'commonServices'
+]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider

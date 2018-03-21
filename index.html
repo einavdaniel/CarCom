@@ -9,15 +9,16 @@
     <script type="text/javascript" src="/bower_components/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.js"></script>
-    <script type="text/javascript" src="/bower_components/angular-materialize/src/angular-materialize.js"></script>
+    <!-- <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-materialize/src/angular-materialize.js"></script> -->
+    <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
+    
     <!-- JavaScripts -->
+    <script type="text/javascript" src="/js/services/common.srv.js"></script>
     <script type="text/javascript" src="/js/config.js"></script>
     <script type="text/javascript" src="/js/controller/home.ctrl.js"></script>
-    <script type="text/javascript" src="/js/directive/material-table.directive.js"></script>
-    <script type="text/javascript" src="/js/services/home.service.js"></script>
-    <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
     <script type="text/javascript" src="/view/RentingList/rentingList.ctrl.js"></script>
+
 
     <!-- CSS -->
      <link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -56,12 +57,9 @@
                 </li>
             </ul>
 
-            <img src=".\img\logo.png" class="logo" >
+            <!-- <img src=".\img\logo.png" class="logo" > -->
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
         </div>
     </nav>
     <ng-view></ng-view>

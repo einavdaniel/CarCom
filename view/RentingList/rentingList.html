@@ -1,6 +1,61 @@
-<h1>
-    renting
-    {{test}}
-</h1>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" ng-repeat="advert in adsList">
+            <div class="card mb-3">
+                <h3 class="card-header">{{advert.publisher.firstName}} {{advert.publisher.lastName}}</h3>
+                <div class="card-body">
+                    <h5 class="card-title">{{advert.car.vendor}} {{advert.car.model}} {{advert.car.year}}</h5>
+                    <h6 class="card-subtitle text-muted">{{advert.dates}}</h6>
+                </div>
+                <img style="height: 200px; width: 100%; display: block;" src="./img/cars/{{advert.car.id}}.jpg" alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>Description: </strong>{{advert.car.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Insurance: </strong>{{advert.car.insurance}}</li>
+                    <li class="list-group-item">
+                        <strong>Price: </strong>{{advert.price}} NIS /day</li>
+                </ul>
+                <div class="card-body" ng-if="advert.isAvailable">
+                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#bookingModal" ng-click="bookCar(advert)">
+                        Book Now</button>
+                </div>
+                <div class="card-footer text-muted">
+                    <p ng-if="advert.isAvailable" class="text-success">Available.</p>
+                    <p ng-if="!advert.isAvailable" class="text-danger">Already booked.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<img  src="./car1.png" >
+
+<div class="modal fade" id="bookingModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book Car</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>For booking, please call {{selectedAdvert.publisher.firstName}} at: {{selectedAdvert.publisher.phoneNumber}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

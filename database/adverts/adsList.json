@@ -1,0 +1,34 @@
+[
+    {
+        "ID": 1,
+        "car": {
+            "id": 2063050,
+            "vendor": "Hunda",
+            "model": "Civic",
+            "year": "2002",
+            "insurance": "Full, Age 24+",
+            "description": "Clean and lovely car. 2nd hand, original engine"
+        },
+        "dates": "6.3.18-9.3.18",
+        "publisherID": 204157184,
+        "price": 35,
+        "community": "מצפן",
+        "isAvailable": true
+    },
+    {
+        "ID": 2,
+        "car": {
+            "id": 7788088,
+            "vendor": "Toyota",
+            "model": "Corola",
+            "year": "2012",
+            "insurance": "Full, Age 21+",
+            "description": "Clean and lovely car. 2nd hand, original engine"
+        },
+        "dates": "6.3.18-9.3.18",
+        "publisherID": 315964494,
+        "price": 60,
+        "community": "מצפן",
+        "isAvailable": false
+    }
+]
