@@ -27,6 +27,7 @@ app.controller('rentingListCtrl', function ($scope, commSrv) {
 
     $scope.bookCar = function(advert){
       $scope.selectedAdvert = advert;
+    //  commSrv.updateCounterFile("./database/comon/bookNowCounter");
     };
 
     $scope.loadAds();
