@@ -1,0 +1,193 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Branch</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Dates</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="request in allRequests track by $index">
+                        <th scope="row">{{request.firstName}} {{request.lastName}}</th>
+                        <td>{{request.branch}}</td>
+                        <td>{{request.age}}</td>
+                        <td>{{request.dates}}</td>
+                        <td>{{request.reason}}</td>
+                        <td>{{request.destination}}</td>
+                        <td>{{request.comments}}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-info btn-sm" ng-click="selectRequest(request)" data-toggle="modal" data-target="#contactModal">contact</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger btn-sm" ng-click="selectRequest(request)" data-toggle="modal" data-target="#removeModal">remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newRequest">Add request</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- NEW REQUEST MODAL -->
+<div class="modal fade" id="newRequest">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Request Car</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form ng-submit="saveRequest()" ng-model="newRequest">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="id">ID:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="id" type="text" ng-blur="idExists(newRequest.id)" ng-model="newRequest.id" pattern="[0-9]+" required>
+                            <p class="text-danger" ng-if="idAlreadyExist">ID is taken.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="firstName">First name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="firstName" ng-model="newRequest.firstName" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="lastName">Last name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="lastName" ng-model="newRequest.lastName" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="branch">Branch:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="branch" ng-model="newRequest.branch" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="age">Age:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="age" ng-model="newRequest.age" type="number" min="18" max="120" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="dates">Dates:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="dates" ng-model="newRequest.dates" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="reason">Reason:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="reason" ng-model="newRequest.reason" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="destination">Destination:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="destination" ng-model="newRequest.destination" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="comments">Comments:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="comments" ng-model="newRequest.comments" type="text" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="phoneNumber">Phone:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="phoneNumber" ng-model="newRequest.phoneNumber" pattern="[0-9\-]+" type="text" required>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" ng-disabled="idAlreadyExist">Add</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT REQUEST MODAL -->
+<div class="modal fade" id="contactModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contact info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Please call {{selectedRequest.firstName}} at: {{selectedRequest.phoneNumber}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- REMOVE REQUEST MODAL -->
+<div class="modal fade" id="removeModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Warning!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>To remove {{selectedRequest.firstName}} request, enter {{selectedRequest.firstName}}'s' valid ID:</p>
+                <input name="id" type="text" ng-blur="idExists(newRequest.id)" ng-model="removeRequestID" pattern="[0-9]+" required>
+                <p class="text-danger" ng-if="showRemoveError">ID not match.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" ng-click="removeRequest(removeRequestID)"  >Remove</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

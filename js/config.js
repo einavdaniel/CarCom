@@ -15,6 +15,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "/view/RentingList/rentingList.html",
             controller: "rentingListCtrl"
         })
+        .when("/requestCar",{
+            templateUrl: "/view/Requests/requestsList.html",
+            controller: "requestListCtrl"
+        })
         .when("/aboutUs",{
             templateUrl: "/view/About/about.html",
         })

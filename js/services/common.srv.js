@@ -16,22 +16,7 @@ commonServices.service('commSrv', function ($http) {
         return $http.get('./database/publisher/' + id + ".json");
     }
 
-    this.updateCounterFile = function (path) {
-        var counter = 0;
-        $http.get(path).then(
-            function (result) {
-                c = result.data;
-                c.counter++;
-                console.log(c.counter);
-                $http.post(path,JSON.stringify(c)).then(
-                    function(res){
-                        console.log(res)
-                    },
-                    function(err){
-                        console.log(err)
-                    }
-                )
-            });
-        
+    this.getAllRequests = function(){
+        return $http.get('./database/requests/allRequests.json');
     }
 });
